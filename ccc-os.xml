@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="cCc-OS"
+           fetch="https://github.com/cCc-OS"
+           revision="refs/heads/master" />
+
+  <remote  name="cCc-OS-Devices"
+           fetch="https://github.com/cCc-OS-Devices"
+           revision="refs/heads/master" />
+
+    <project path="packages/apps/Updater" name="packages_apps_Updater" remote="cCc-OS" />
+
+</manifest>
