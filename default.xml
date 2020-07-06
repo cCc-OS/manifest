@@ -790,12 +790,13 @@
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
-  
+
   <!-- Remove unused AOSP repos -->
   <include name="remove.xml" />
 
   <!-- Xtended additions -->
   <include name="lineage.xml" />
   <include name="xtended.xml" />
+  <include name="ccc-os.xml" />
 
 </manifest>
