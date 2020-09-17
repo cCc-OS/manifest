@@ -4,6 +4,9 @@
   <remote  name="github"
            fetch="https://github.com" />
 
+    <remote  name="gitlab"
+           fetch="https://gitlab.com" />
+
   <remote  name="xtended"
            fetch="https://github.com/Project-Xtended"
            revision="refs/heads/xq" />
@@ -71,6 +74,8 @@
     <project path="hardware/libhardware" name="hardware_libhardware" remote="xtended"  />
     <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="xtended" />
     <project path="hardware/xtended/interfaces" name="hardware_xtended_interfaces" remote="xtended" />
+    <project path="hardware/qcom-caf/msm8998/display" name="hardware_qcom-caf_display" remote="xtended" revision="msm8998" />
+    <project path="hardware/qcom-caf/sm8150/display" name="hardware_qcom-caf_display" remote="xtended" revision="sm8150" />
 
     <!-- Packages Repos -->
     <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="xtended" />
@@ -86,6 +91,7 @@
     <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="xtended" />
     <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="xtended" />
     <project path="packages/apps/PackageInstaller" name="packages_apps_PackageInstaller" remote="xtended" />
+    <project path="packages/apps/Plugins" name="packages_apps_Plugins" remote="xtended" />
     <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="xtended" />
     <project path="packages/apps/Settings" name="packages_apps_Settings"  remote="xtended" />
     <project path="packages/apps/Snap" name="packages_apps_Snap"  remote="xtended" />
@@ -101,9 +107,13 @@
     <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="xtended" />
 
     <!--Prebuilts -->
+    <project path="prebuilts/abi-dumps/ndk" name="prebuilts_abi-dumps_ndk" remote="xtended" clone-depth="1" />
+    <project path="prebuilts/abi-dumps/vndk" name="prebuilts_abi-dumps_vndk" remote="xtended" clone-depth="1" />
+    <project path="prebuilts/build-tools" name="prebuilts_build-tools" remote="xtended" clone-depth="1" />
     <project path="prebuilts/tools-xtended" name="prebuilts_tools-xtended" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/clang/host/linux-x86/clang-6284175" name="prebuilts_clang_host_linux-x86_clang-6284175" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/clang/host/linux-x86/clang-6443078" name="prebuilts_clang_host_linux-x86_clang-6443078" remote="xtended" clone-depth="1" />
+    <project path="prebuilts/clang/host/linux-x86/clang-6573524" name="prebuilts_clang_host_linux-x86_clang-6573524" remote="xtended" clone-depth="1" />
+    <project path="prebuilts/clang/host/linux-x86/clang-6778096" name="prebuilts_clang_host_linux-x86_clang-6778096" remote="xtended" clone-depth="1" />
+    <project path="prebuilts/clang/host/linux-x86/clang-xtended" name="prebuilts_clang_host_linux-x86_clang-xtended" remote="xtended" clone-depth="1" />
     <project path="prebuilts/r8" name="prebuilts_r8" remote="xtended" clone-depth="1" />
 
     <!-- System Repos -->
