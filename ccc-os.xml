@@ -9,6 +9,6 @@
            fetch="https://github.com/cCc-OS-Devices"
            revision="refs/heads/master" />
 
-    <project path="packages/apps/Updater" name="packages_apps_Updater" remote="cCc-OS" />
+    <!--<project path="packages/apps/Updater" name="packages_apps_Updater" remote="cCc-OS" />-->
 
 </manifest>

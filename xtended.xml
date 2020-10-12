@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="github"
-           fetch="https://github.com" />
+    <remote name="github"
+        fetch="https://github.com" />
 
-    <remote  name="gitlab"
-           fetch="https://gitlab.com" />
+    <remote name="gitlab"
+        fetch="https://gitlab.com" />
 
-  <remote  name="xtended"
-           fetch="https://github.com/Project-Xtended"
-           revision="refs/heads/xq" />
+    <remote name="xtended"
+        fetch="https://github.com/Project-Xtended"
+        revision="refs/heads/xr" />
 
-  <remote  name="Xtended-Devices"
-           fetch="https://github.com/Xtended-Devices"
-           revision="refs/heads/xq" />
+    <remote name="Xtended-Devices"
+        fetch="https://github.com/Xtended-Devices"
+        revision="refs/heads/xr" />
 
+    <remote name="temp"
+        fetch="https://github.com/Xtended-R"
+        revision="refs/heads/xr" />
 
     <!-- General Repos -->
-    <project path="art" name="art" remote="xtended" />
-    <project path="bionic" name="bionic" remote="xtended" />
-    <project path="bootable/recovery" name="bootable_recovery" remote="xtended" />
-    <project path="crowdin" name="crowdin" remote="xtended" />
-    <project path="development" name="development" remote="xtended" />
-    <project path="libcore" name="libcore"  remote="xtended" />
-    <project path="manifest" name="manifest" remote="xtended" />
-    <project path="platform_testing" name="platform_testing" remote="xtended" />
+    <project path="manifest" name="manifest" remote="temp" />
+    <project path="art" name="art" remote="temp" />
+    <project path="bootable/recovery" name="bootable_recovery" remote="temp" />
+    <project path="bionic" name="bionic" remote="temp" />
 
     <!-- Build Repos -->
-    <project path="build/make" name="build" remote="xtended" >
+    <project path="build/blueprint" name="build_blueprint" remote="temp" />
+    <project path="build/make" name="build_make" remote="temp" >
         <copyfile src="core/root.mk" dest="Makefile" />
         <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
         <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -36,100 +36,81 @@
         <linkfile src="target" dest="build/target" />
         <linkfile src="tools" dest="build/tools" />
     </project>
-    <project path="build/soong" name="build_soong"  remote="xtended" >
+    <project path="build/soong" name="build_soong"  remote="temp" >
         <linkfile src="root.bp" dest="Android.bp" />
         <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
     </project>
-    <project path="build/blueprint" name="build_blueprint" groups="pdk,tradefed" remote="xtended" />
 
-    <!-- Device Repos -->
-    <project path="device/xtended/sepolicy" name="device_xtended_sepolicy" remote="xtended" />
-    <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="xtended" />
-    <project path="device/qcom/sepolicy-legacy" name="device_qcom_sepolicy-legacy" remote="xtended" />
-    <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" remote="xtended" />
+    <!-- Development -->
+    <project path="development" name="development" remote="temp" />
 
-    <!-- External repos -->
-    <project path="external/airbnb-lottie" name="external_airbnb-lottie" remote="xtended" />
-    <project path="external/tinycompress" name="external_tinycompress" remote="xtended" />
-    <project path="external/asus/stitchimage" name="external_asus_stitchimage" remote="xtended" />
-    <project path="external/skia" name="external_skia" remote="xtended" />
-    <project path="external/arm-optimized-routines" name="external_arm-optimized-routines" remote="xtended" />
-    <project path="external/jemalloc_new" name="external_jemalloc-new" remote="xtended" />
-    <project path="external/sqlite" name="external_sqlite" remote="xtended" />
-    <project path="external/zlib" name="external_zlib" remote="xtended" />
-    <project path="external/pulse" name="packages_apps_SmartNav" remote="xtended" />
-    <project path="external/libjpeg-turbo" name="external_libjpeg-turbo" remote="xtended" />
-    <project path="external/libpng" name="external_libpng" remote="xtended" />
+    <!-- device Repos -->
+    <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="temp" />
+    <project path="device/xtended/sepolicy" name="device_xtended_sepolicy" remote="temp" />
+    <project path="device/qcom/sepolicy_vndr" name="device_qcom_sepolicy_vndr" remote="temp" />
+    <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" remote="temp" />
 
-    <!-- Framework Repos -->
-    <project path="frameworks/av" name="frameworks_av" remote="xtended" />
-    <project path="frameworks/base" name="frameworks_base" remote="xtended" />
-    <project path="frameworks/native" name="frameworks_native" remote="xtended" />
-    <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="xtended" />
-    <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="xtended" />
-    <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="xtended" />
+    <!-- External Repos -->
+    <project path="external/guice" name="external_guice" remote="temp" />
+    <project path="external/selinux" name="external_selinux" remote="temp" />
+    <project path="external/sqlite" name="external_sqlite" remote="temp" />
+    <project path="external/libcxx" name="external_libcxx" remote="temp" />
+    <project path="external/tinycompress" name="external_tinycompress" remote="temp" />
+    <project path="external/zlib" name="external_zlib" remote="temp" />
+    <project path="external/libpng" name="external_libpng" remote="temp" />
+    <project path="external/libjpeg-turbo" name="external_libjpeg-turbo" remote="temp" />
+    <project path="external/arm-optimized-routines" name="external_arm-optimized-routines" remote="temp" />
+
+    <!-- Frameworks repos -->
+    <project path="frameworks/av" name="frameworks_av" remote="temp" />
+    <project path="frameworks/base" name="frameworks_base" remote="temp" />
+    <project path="frameworks/native" name="frameworks_native" remote="temp" />
 
     <!-- Hardware Repos -->
-    <project path="hardware/interfaces" name="hardware_interfaces" remote="xtended" />
-    <project path="hardware/libhardware" name="hardware_libhardware" remote="xtended"  />
-    <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="xtended" />
-    <project path="hardware/xtended/interfaces" name="hardware_xtended_interfaces" remote="xtended" />
-    <project path="hardware/qcom-caf/msm8998/display" name="hardware_qcom-caf_display" remote="xtended" revision="msm8998" />
-    <project path="hardware/qcom-caf/sm8150/display" name="hardware_qcom-caf_display" remote="xtended" revision="sm8150" />
+    <project path="hardware/interfaces" name="hardware_interfaces" remote="temp" />
+    <project path="hardware/libhardware" name="hardware_libhardware" remote="temp" />
+    <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="temp" />
+    <project path="hardware/ril" name="hardware_ril" remote="temp" />
+    <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="temp" />
+    <project path="hardware/xtended/interfaces" name="hardware_xtended_interfaces" remote="temp" />
 
     <!-- Packages Repos -->
-    <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="xtended" />
-    <project path="packages/apps/CertInstaller" name="packages_apps_CertInstaller" remote="xtended" />
-    <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="xtended" />
-    <project path="packages/apps/CustomDoze" name="packages_apps_CustomDoze" remote="xtended" />
-    <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="xtended" />
-    <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" remote="xtended" />
-    <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="xtended" />
-    <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="xtended" />
-    <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="xtended" />
-    <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="xtended" />
-    <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="xtended" />
-    <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="xtended" />
-    <project path="packages/apps/PackageInstaller" name="packages_apps_PackageInstaller" remote="xtended" />
-    <project path="packages/apps/Plugins" name="packages_apps_Plugins" remote="xtended" />
-    <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="xtended" />
-    <project path="packages/apps/Settings" name="packages_apps_Settings"  remote="xtended" />
-    <project path="packages/apps/Snap" name="packages_apps_Snap"  remote="xtended" />
-    <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="xtended" />
-    <!--<project path="packages/apps/Updater" name="packages_apps_Updater" remote="xtended" />-->
-    <project path="packages/apps/Traceur" name="packages_apps_Traceur" remote="xtended" />
-    <project path="packages/apps/WallpaperPicker2" name="packages_apps_WallpaperPicker2" remote="xtended" />
-    <project path="packages/apps/Xtensions" name="packages_apps_Xtensions" remote="xtended"/>
-    <project path="packages/providers/ContactsProvider" name="packages_providers_ContactsProvider" remote="xtended" />
-    <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="xtended" />
-    <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="xtended" />
-    <project path="packages/services/Telephony" name="packages_services_Telephony" remote="xtended" />
-    <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="xtended" />
+    <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="temp" />
+    <project path="packages/apps/EmergencyInfo" name="packages_apps_EmergencyInfo" remote="temp" />
+    <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="temp" />
+    <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="temp" />
+    <project path="packages/apps/Settings" name="packages_apps_Settings"  remote="temp" />
+    <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence"  remote="temp" />
+    <project path="packages/apps/Traceur" name="packages_apps_Traceur"  remote="temp" />
+    <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker"  remote="temp" />
+    <project path="packages/apps/Xtensions" name="packages_apps_Xtensions"  remote="temp" />
+    <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider"  remote="temp" />
+    <project path="packages/services/Telephony" name="packages_services_Telephony"  remote="temp" />
+    <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="temp" />
 
     <!--Prebuilts -->
-    <project path="prebuilts/abi-dumps/ndk" name="prebuilts_abi-dumps_ndk" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/abi-dumps/vndk" name="prebuilts_abi-dumps_vndk" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/build-tools" name="prebuilts_build-tools" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/tools-xtended" name="prebuilts_tools-xtended" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/clang/host/linux-x86/clang-6573524" name="prebuilts_clang_host_linux-x86_clang-6573524" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/clang/host/linux-x86/clang-6778096" name="prebuilts_clang_host_linux-x86_clang-6778096" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/clang/host/linux-x86/clang-xtended" name="prebuilts_clang_host_linux-x86_clang-xtended" remote="xtended" clone-depth="1" />
-    <project path="prebuilts/r8" name="prebuilts_r8" remote="xtended" clone-depth="1" />
+    <project path="prebuilts/abi-dumps/vndk" name="prebuilts_abi-dumps_vndk" remote="temp" clone-depth="1" />
+    <project path="prebuilts/tools-xtended" name="prebuilts_tools-xtended" remote="temp" clone-depth="1" />
+    <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="prebuilts_gcc_linux-x86_host_x86_64-linux-glibc2.17-4.8" remote="temp" clone-depth="1" />
+    <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" remote="temp" clone-depth="1" />
+    <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" remote="temp" clone-depth="1" />
 
     <!-- System Repos -->
-    <project path="system/bt" name="system_bt" remote="xtended" />
-    <project path="system/bpf" name="system_bpf" remote="xtended" />
-    <project path="system/core" name="system_core" remote="xtended" />
-    <project path="system/extras" name="system_extras" remote="xtended" />
-    <project path="system/hardware/interfaces" name="system_hardware_interfaces" remote="xtended" />
-    <project path="system/keymaster" name="system_keymaster" remote="xtended" />
-    <project path="system/netd" name="system_netd" remote="xtended" />
-    <project path="system/sepolicy" name="system_sepolicy" remote="xtended" />
-    <project path="system/update_engine" name="system_update_engine" remote="xtended" />
-    <project path="system/vold" name="system_vold" remote="xtended" />
+    <project path="system/apex" name="system_apex" remote="temp" />
+    <project path="system/bt" name="system_bt" remote="temp" />
+    <project path="system/core" name="system_core" remote="temp" />
+    <project path="system/incremental_delivery" name="system_incremental_delivery" remote="temp" />
+    <project path="system/libufdt" name="system_libufdt" remote="temp" />
+    <project path="system/sepolicy" name="system_sepolicy" remote="temp" />
+    <project path="system/tools/mkbootimg" name="system_tools_mkbootimg" remote="temp" />
+    <project path="system/update_engine" name="system_update_engine" remote="temp" />
+    <project path="system/vold" name="system_vold" remote="temp" />
+
+    <!--Tools repos-->
+    <project path="tools/metalava" name="tools_metalava" remote="temp" />
 
     <!-- Vendor Repo -->
-    <project path="vendor/xtended" name="vendor_xtended" remote="xtended" />
-    <project path="vendor/xtras" name="vendor_xtras" remote="xtended" />
+    <project path="vendor/xtended" name="vendor_xtended" remote="temp" />
+    <project path="vendor/xtras" name="vendor_xtras" remote="temp" />
 
 </manifest>
