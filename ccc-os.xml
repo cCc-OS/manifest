@@ -7,7 +7,7 @@
 
   <remote  name="cCc-OS-Devices"
            fetch="https://github.com/cCc-OS-Devices"
-           revision="refs/heads/master" />
+           revision="refs/heads/master" revision="refs/heads/11" />
 
     <!--<project path="packages/apps/Updater" name="packages_apps_Updater" remote="cCc-OS" />-->
 
