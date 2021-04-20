@@ -18,7 +18,7 @@
     <remove-project name="platform/developers/demos" />
     <remove-project name="platform/developers/samples/android" />-->
 
-    <!-- Device -->
+    <!-- Device
     <remove-project name="device/common" />
     <remove-project name="device/generic/arm64" />
     <remove-project name="device/generic/armv7-a-neon" />
@@ -37,7 +37,7 @@
     <remove-project name="device/google/atv" />
     <remove-project name="device/google/contexthub" />
     <remove-project name="device/google/vrservices" />
-    <remove-project name="device/sample" />
+    <remove-project name="device/sample" />-->
 
     <!-- Packages
     <remove-project name="platform/packages/apps/Browser2" />
