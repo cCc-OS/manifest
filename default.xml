@@ -774,13 +774,14 @@
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" remote="aosp" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" remote="aosp" />
 
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
-
   <!-- Remove unused AOSP repos -->
   <include name="remove.xml" />
 
   <!-- Xtended additions -->
   <include name="lineage.xml" />
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
   <include name="ccc-os.xml" />
 
 </manifest>
